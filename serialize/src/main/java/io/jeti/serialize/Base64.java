@@ -1,4 +1,4 @@
-package io.jeti.utils;
+package io.jeti.serialize;
 
 import java.io.FilterOutputStream;
 import java.io.IOException;
@@ -13,21 +13,21 @@ public class Base64 {
     private Base64() {
     }
 
-    public static io.jeti.utils.Base64.Encoder getEncoder() {
-        return io.jeti.utils.Base64.Encoder.RFC4648;
+    public static io.jeti.serialize.Base64.Encoder getEncoder() {
+        return io.jeti.serialize.Base64.Encoder.RFC4648;
     }
 
-    public static io.jeti.utils.Base64.Encoder getUrlEncoder() {
-        return io.jeti.utils.Base64.Encoder.RFC4648_URLSAFE;
+    public static io.jeti.serialize.Base64.Encoder getUrlEncoder() {
+        return io.jeti.serialize.Base64.Encoder.RFC4648_URLSAFE;
     }
 
-    public static io.jeti.utils.Base64.Encoder getMimeEncoder() {
-        return io.jeti.utils.Base64.Encoder.RFC2045;
+    public static io.jeti.serialize.Base64.Encoder getMimeEncoder() {
+        return io.jeti.serialize.Base64.Encoder.RFC2045;
     }
 
-    public static io.jeti.utils.Base64.Encoder getMimeEncoder(int var0, byte[] var1) {
+    public static io.jeti.serialize.Base64.Encoder getMimeEncoder(int var0, byte[] var1) {
         Objects.requireNonNull(var1);
-        int[] var2 = io.jeti.utils.Base64.Decoder.fromBase64;
+        int[] var2 = io.jeti.serialize.Base64.Decoder.fromBase64;
         byte[] var3 = var1;
         int var4 = var1.length;
 
@@ -40,22 +40,22 @@ public class Base64 {
         }
 
         if (var0 <= 0) {
-            return io.jeti.utils.Base64.Encoder.RFC4648;
+            return io.jeti.serialize.Base64.Encoder.RFC4648;
         } else {
-            return new io.jeti.utils.Base64.Encoder(false, var1, var0 >> 2 << 2, true);
+            return new io.jeti.serialize.Base64.Encoder(false, var1, var0 >> 2 << 2, true);
         }
     }
 
-    public static io.jeti.utils.Base64.Decoder getDecoder() {
-        return io.jeti.utils.Base64.Decoder.RFC4648;
+    public static io.jeti.serialize.Base64.Decoder getDecoder() {
+        return io.jeti.serialize.Base64.Decoder.RFC4648;
     }
 
-    public static io.jeti.utils.Base64.Decoder getUrlDecoder() {
-        return io.jeti.utils.Base64.Decoder.RFC4648_URLSAFE;
+    public static io.jeti.serialize.Base64.Decoder getUrlDecoder() {
+        return io.jeti.serialize.Base64.Decoder.RFC4648_URLSAFE;
     }
 
-    public static io.jeti.utils.Base64.Decoder getMimeDecoder() {
-        return io.jeti.utils.Base64.Decoder.RFC2045;
+    public static io.jeti.serialize.Base64.Decoder getMimeDecoder() {
+        return io.jeti.serialize.Base64.Decoder.RFC2045;
     }
 
     private static class DecInputStream extends InputStream {
@@ -320,9 +320,9 @@ public class Base64 {
         private final boolean                     isMIME;
         private static final int[]                fromBase64 = new int[256];
         private static final int[]                fromBase64URL;
-        static final io.jeti.utils.Base64.Decoder RFC4648;
-        static final io.jeti.utils.Base64.Decoder RFC4648_URLSAFE;
-        static final io.jeti.utils.Base64.Decoder RFC2045;
+        static final io.jeti.serialize.Base64.Decoder RFC4648;
+        static final io.jeti.serialize.Base64.Decoder RFC4648_URLSAFE;
+        static final io.jeti.serialize.Base64.Decoder RFC2045;
 
         private Decoder(boolean var1, boolean var2) {
             this.isURL = var1;
@@ -382,7 +382,7 @@ public class Base64 {
 
         public InputStream wrap(InputStream var1) {
             Objects.requireNonNull(var1);
-            return new io.jeti.utils.Base64.DecInputStream(var1,
+            return new io.jeti.serialize.Base64.DecInputStream(var1,
                     this.isURL ? fromBase64URL : fromBase64, this.isMIME);
         }
 
@@ -489,7 +489,7 @@ public class Base64 {
             Arrays.fill(fromBase64, -1);
 
             int var0;
-            for (var0 = 0; var0 < io.jeti.utils.Base64.Encoder.toBase64.length; fromBase64[io.jeti.utils.Base64.Encoder.toBase64[var0]] = var0++) {
+            for (var0 = 0; var0 < io.jeti.serialize.Base64.Encoder.toBase64.length; fromBase64[io.jeti.serialize.Base64.Encoder.toBase64[var0]] = var0++) {
                 ;
             }
 
@@ -497,14 +497,14 @@ public class Base64 {
             fromBase64URL = new int[256];
             Arrays.fill(fromBase64URL, -1);
 
-            for (var0 = 0; var0 < io.jeti.utils.Base64.Encoder.toBase64URL.length; fromBase64URL[io.jeti.utils.Base64.Encoder.toBase64URL[var0]] = var0++) {
+            for (var0 = 0; var0 < io.jeti.serialize.Base64.Encoder.toBase64URL.length; fromBase64URL[io.jeti.serialize.Base64.Encoder.toBase64URL[var0]] = var0++) {
                 ;
             }
 
             fromBase64URL[61] = -2;
-            RFC4648 = new io.jeti.utils.Base64.Decoder(false, false);
-            RFC4648_URLSAFE = new io.jeti.utils.Base64.Decoder(true, false);
-            RFC2045 = new io.jeti.utils.Base64.Decoder(false, true);
+            RFC4648 = new io.jeti.serialize.Base64.Decoder(false, false);
+            RFC4648_URLSAFE = new io.jeti.serialize.Base64.Decoder(true, false);
+            RFC2045 = new io.jeti.serialize.Base64.Decoder(false, true);
         }
     }
 
@@ -525,11 +525,11 @@ public class Base64 {
                 '3', '4', '5', '6', '7', '8', '9', '-', '_' };
         private static final int                  MIMELINEMAX     = 76;
         private static final byte[]               CRLF            = new byte[] { 13, 10 };
-        static final io.jeti.utils.Base64.Encoder RFC4648         = new io.jeti.utils.Base64.Encoder(
+        static final io.jeti.serialize.Base64.Encoder RFC4648         = new io.jeti.serialize.Base64.Encoder(
                 false, (byte[]) null, -1, true);
-        static final io.jeti.utils.Base64.Encoder RFC4648_URLSAFE = new io.jeti.utils.Base64.Encoder(
+        static final io.jeti.serialize.Base64.Encoder RFC4648_URLSAFE = new io.jeti.serialize.Base64.Encoder(
                 true, (byte[]) null, -1, true);
-        static final io.jeti.utils.Base64.Encoder RFC2045;
+        static final io.jeti.serialize.Base64.Encoder RFC2045;
 
         private Encoder(boolean var1, byte[] var2, int var3, boolean var4) {
             this.isURL = var1;
@@ -601,14 +601,14 @@ public class Base64 {
 
         public OutputStream wrap(OutputStream var1) {
             Objects.requireNonNull(var1);
-            return new io.jeti.utils.Base64.EncOutputStream(var1,
+            return new io.jeti.serialize.Base64.EncOutputStream(var1,
                     this.isURL ? toBase64URL : toBase64, this.newline, this.linemax,
                     this.doPadding);
         }
 
-        public io.jeti.utils.Base64.Encoder withoutPadding() {
+        public io.jeti.serialize.Base64.Encoder withoutPadding() {
             return !this.doPadding ? this
-                    : new io.jeti.utils.Base64.Encoder(this.isURL, this.newline, this.linemax,
+                    : new io.jeti.serialize.Base64.Encoder(this.isURL, this.newline, this.linemax,
                             false);
         }
 
@@ -681,7 +681,7 @@ public class Base64 {
         }
 
         static {
-            RFC2045 = new io.jeti.utils.Base64.Encoder(false, CRLF, 76, true);
+            RFC2045 = new io.jeti.serialize.Base64.Encoder(false, CRLF, 76, true);
         }
     }
 }

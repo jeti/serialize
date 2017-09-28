@@ -18,7 +18,7 @@ ext {
     siteUrl = 'https://github.com/jeti/serialize'
     gitUrl = 'https://github.com/jeti/serialize.git'
 
-    libraryVersion = '1.0.5'
+    libraryVersion = '1.0.6'
 
     developerId = 'mholzel'
     developerName = 'Matthew Holzel'

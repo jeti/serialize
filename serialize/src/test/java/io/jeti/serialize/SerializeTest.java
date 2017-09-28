@@ -1,4 +1,4 @@
-package io.jeti.utils;
+package io.jeti.serialize;
 
 import java.util.ArrayList;
 import java.util.List;
