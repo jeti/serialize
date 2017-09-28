@@ -9,7 +9,7 @@ ext {
     bintrayRepo = 'java'
     bintrayName = 'serialize'
 
-    publishedGroupId = 'io.jeti.utils'
+    publishedGroupId = 'io.jeti'
     libraryName = 'serialize'
     artifact = 'serialize'
 
@@ -18,7 +18,7 @@ ext {
     siteUrl = 'https://github.com/jeti/serialize'
     gitUrl = 'https://github.com/jeti/serialize.git'
 
-    libraryVersion = '1.0.4'
+    libraryVersion = '1.0.5'
 
     developerId = 'mholzel'
     developerName = 'Matthew Holzel'
