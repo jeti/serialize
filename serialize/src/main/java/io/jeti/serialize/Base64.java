@@ -316,10 +316,10 @@ public class Base64 {
     }
 
     public static class Decoder {
-        private final boolean                     isURL;
-        private final boolean                     isMIME;
-        private static final int[]                fromBase64 = new int[256];
-        private static final int[]                fromBase64URL;
+        private final boolean                         isURL;
+        private final boolean                         isMIME;
+        private static final int[]                    fromBase64 = new int[256];
+        private static final int[]                    fromBase64URL;
         static final io.jeti.serialize.Base64.Decoder RFC4648;
         static final io.jeti.serialize.Base64.Decoder RFC4648_URLSAFE;
         static final io.jeti.serialize.Base64.Decoder RFC2045;
@@ -509,22 +509,22 @@ public class Base64 {
     }
 
     public static class Encoder {
-        private final byte[]                      newline;
-        private final int                         linemax;
-        private final boolean                     isURL;
-        private final boolean                     doPadding;
-        private static final char[]               toBase64        = new char[] { 'A', 'B', 'C', 'D',
-                'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
-                'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-                'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2',
-                '3', '4', '5', '6', '7', '8', '9', '+', '/' };
-        private static final char[]               toBase64URL     = new char[] { 'A', 'B', 'C', 'D',
-                'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
-                'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-                'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2',
-                '3', '4', '5', '6', '7', '8', '9', '-', '_' };
-        private static final int                  MIMELINEMAX     = 76;
-        private static final byte[]               CRLF            = new byte[] { 13, 10 };
+        private final byte[]                          newline;
+        private final int                             linemax;
+        private final boolean                         isURL;
+        private final boolean                         doPadding;
+        private static final char[]                   toBase64        = new char[] { 'A', 'B', 'C',
+                'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+                'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1',
+                '2', '3', '4', '5', '6', '7', '8', '9', '+', '/' };
+        private static final char[]                   toBase64URL     = new char[] { 'A', 'B', 'C',
+                'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+                'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1',
+                '2', '3', '4', '5', '6', '7', '8', '9', '-', '_' };
+        private static final int                      MIMELINEMAX     = 76;
+        private static final byte[]                   CRLF            = new byte[] { 13, 10 };
         static final io.jeti.serialize.Base64.Encoder RFC4648         = new io.jeti.serialize.Base64.Encoder(
                 false, (byte[]) null, -1, true);
         static final io.jeti.serialize.Base64.Encoder RFC4648_URLSAFE = new io.jeti.serialize.Base64.Encoder(

@@ -33,9 +33,8 @@ public class SerializeTest {
          * Note that the deserialized object clearly won't be the same instance
          * as the original object. So if you are curious, you can uncomment the
          * following line just to show that it will fail.
-         * 
+         *
          * <pre><code>TestCase.assertEquals(village,dVillage);</code></pre>
          */
     }
-
 }
