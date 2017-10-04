@@ -13,12 +13,12 @@ ext {
     libraryName = 'serialize'
     artifact = 'serialize'
 
-    libraryDescription = 'A super simple serialization library which uses Javas built-in Base64 and Serializable support to convert objects to and from strings.'
+    libraryDescription = 'A super simple serialization library which exposes a simple Serialization API and provides a concrete Serializer using Javas built-in Serializable support.'
 
     siteUrl = 'https://github.com/jeti/serialize'
     gitUrl = 'https://github.com/jeti/serialize.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.1'
 
     developerId = 'jeti'
     developerName = 'Matthew Holzel'

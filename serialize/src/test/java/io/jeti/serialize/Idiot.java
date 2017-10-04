@@ -47,4 +47,14 @@ public class Idiot implements Serializable {
         result = 31 * result + (weight != null ? weight.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Idiot{" +
+            "name='" + name + '\'' +
+            ", nickname='" + nickname + '\'' +
+            ", height=" + height +
+            ", weight=" + weight +
+            '}';
+    }
 }

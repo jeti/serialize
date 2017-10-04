@@ -28,7 +28,15 @@ public class SerializeTest {
         Village dVillage = (Village) Serialize.fromString(serialized);
         TestCase.assertEquals(village, dVillage);
 
+        System.out.println("Serialized object: ");
         System.out.println(serialized);
+
+        System.out.println("Original object: ");
+        System.out.println(village.toString());
+
+        System.out.println("Deserialized object: ");
+        System.out.println(dVillage.toString());
+
         /*
          * Note that the deserialized object clearly won't be the same instance
          * as the original object. So if you are curious, you can uncomment the

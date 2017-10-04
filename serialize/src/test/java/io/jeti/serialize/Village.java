@@ -37,4 +37,12 @@ public class Village implements Serializable {
         result = 31 * result + Arrays.hashCode(ages);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Village{" +
+            "idiots=" + idiots +
+            ", ages=" + Arrays.toString(ages) +
+            '}';
+    }
 }
